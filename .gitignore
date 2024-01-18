@@ -28,3 +28,4 @@ logs
 .pruvious
 .pruviousrc
 .ssh.*
+/public/uploads
