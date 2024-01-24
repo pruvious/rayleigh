@@ -1,6 +1,13 @@
 {
   "name": "@pruvious/rayleigh",
   "private": true,
+  "description": "A minimalistic portfolio template made with Nuxt & Pruvious.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pruvious/rayleigh.git"
+  },
+  "author": "Muris Ceman <hello@pruvious.com>",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "build": "nuxt build",
@@ -14,7 +21,7 @@
     "@nuxtjs/color-mode": "^3.3.2",
     "@vueuse/core": "^10.7.1",
     "focus-trap": "^7",
-    "pruvious": "^3.9.7",
+    "pruvious": "^3.9.9",
     "swiper": "^11.0.5"
   },
   "devDependencies": {
@@ -24,7 +31,7 @@
     "prettier": "^3.1.1",
     "prettier-plugin-organize-attributes": "^1.0.0",
     "prettier-plugin-tailwindcss": "^0.5.11",
-    "vue": "^3.4.14",
+    "vue": "^3.4.15",
     "vue-router": "^4.2.5"
   }
 }

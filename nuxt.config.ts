@@ -18,5 +18,8 @@ export default defineNuxtConfig({
     jwt: {
       secretKey: 'random-secret-key',
     },
+    standardCollections: {
+      pages: false,
+    },
   },
 })
