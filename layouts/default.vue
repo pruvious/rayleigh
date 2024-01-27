@@ -7,6 +7,7 @@
   </div>
 
   <Footer class="mb-23" />
+  <PruviousBadge />
 </template>
 
 <script lang="ts" setup>
