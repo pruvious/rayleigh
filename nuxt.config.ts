@@ -23,6 +23,8 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    showBanner: false,
+    public: {
+      showBanner: false,
+    },
   },
 })
