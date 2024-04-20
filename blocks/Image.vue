@@ -1,6 +1,6 @@
 <template>
   <Container class="content-block">
-    <PruviousPicture :image="image" class="max-w-content block h-auto w-full overflow-hidden rounded-md" />
+    <PruviousPicture :image="image" class="block h-auto w-full max-w-content overflow-hidden rounded-md" />
   </Container>
 </template>
 

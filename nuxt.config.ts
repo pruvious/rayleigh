@@ -22,4 +22,7 @@ export default defineNuxtConfig({
       pages: false,
     },
   },
+  runtimeConfig: {
+    showBanner: false,
+  },
 })

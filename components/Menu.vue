@@ -8,9 +8,10 @@
       <li v-for="({ label, link }, i) of menu" ref="menuItemEls">
         <NuxtLink
           :to="link"
+          @click="mobileMenuVisible = false"
           @mouseenter="updateDotPosition(i)"
           class="text-sm font-bold text-heading transition dark:text-white"
-          :class="{ 'tp:underline tp:decoration-2 tp:underline-offset-4': link === route.path }"
+          :class="{ 'tp:underline tp:decoration-2 tp:underline-offset-4': i === activeMenuIndex }"
         >
           {{ label }}
         </NuxtLink>
@@ -19,7 +20,7 @@
 
     <span
       v-if="dotPosition !== null"
-      class="absolute top-1/2 -ml-3.5 mt-px h-1.5 w-1.5 rounded-full bg-heading transition duration-300 tp:hidden dark:bg-white"
+      class="absolute top-1/2 -ml-3.5 mt-px h-1.5 w-1.5 rounded-full bg-heading transition duration-300 dark:bg-white tp:hidden"
       :style="{ transform: `translate3d(${dotPosition}px, -50%, 0)` }"
     ></span>
   </nav>
@@ -40,7 +41,7 @@ const route = useRoute()
 let activeMenuIndex = 0
 
 onMounted(() => {
-  activeMenuIndex = menu.findIndex(({ link }) => link === route.path)
+  activeMenuIndex = menu.findIndex(({ link }) => link === route.path || route.path.startsWith(`${link}/`))
   updateDotPosition()
 })
 

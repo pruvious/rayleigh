@@ -2,7 +2,7 @@
 
 > Rayleigh is a free minimalistic portfolio template built with Nuxt & Pruvious.
 
-This project was generated with [Pruvious](https://pruvious.com) CLI version 3.9.7.
+This project was generated with [Pruvious](https://pruvious.com) CLI version 3.11.4.
 
 - Preview: [https://rayleigh.pruvious.com](https://rayleigh.pruvious.com)
 - Documentation: [https://pruvious.com/docs](https://pruvious.com/docs)
@@ -12,8 +12,8 @@ This project was generated with [Pruvious](https://pruvious.com) CLI version 3.9
 
 This repository contains a database and uploads for demonstration. The admin user's credentials are:
 
--  Email: hello@pruvious.com
--  Password: 12345678
+- Email: hello@pruvious.com
+- Password: 12345678
 
 To access the dashboard, go to `http://localhost:3000/dashboard`.
 

@@ -1,6 +1,6 @@
 <template>
   <Container class="content-block">
-    <PruviousHTML :html="text" class="max-w-content prose" />
+    <PruviousHTML :html="text" class="prose max-w-content" />
   </Container>
 </template>
 

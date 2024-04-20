@@ -19,7 +19,9 @@ export default {
         heading: ['Poppins', ...defaultTheme.fontFamily.mono],
       },
       fontSize: {
-        sm: ['0.875rem', { lineHeight: '1rem' }],
+        'vs': ['0.8125rem', '1.5'],
+        'sm': ['0.875rem', '1rem'],
+        'post-title': ['2rem', '1.5'],
       },
       screens: {
         lp: { max: '1440px' },
@@ -30,6 +32,7 @@ export default {
       spacing: {
         15: '3.75rem',
         23: '5.75rem',
+        95: '23.75rem',
         content: '48.75rem',
       },
     },

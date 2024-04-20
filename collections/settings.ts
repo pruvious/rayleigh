@@ -62,6 +62,13 @@ export default defineCollection({
         fieldLayout: [['icon | 12rem', 'link', 'title']], // Display the subfields in a single row
       },
     },
+    blogLandingPage: {
+      type: 'link',
+      options: {
+        required: true,
+        description: 'The page where all blog posts are listed',
+      },
+    },
   },
   dashboard: {
     // Group fields in tabs
@@ -69,6 +76,7 @@ export default defineCollection({
       {
         Header: ['menu'],
         Footer: ['copyrightText', 'socialMedia'],
+        Blog: ['blogLandingPage'],
       },
     ],
   },

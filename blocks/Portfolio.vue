@@ -2,7 +2,7 @@
   <div>
     <Container class="space-y-6 ph:space-y-5">
       <h2
-        class="relative before:absolute before:right-full before:top-1/2 before:mr-3 before:h-2 before:w-2 before:-translate-y-1/2 before:rounded-full before:bg-heading before:transition before:duration-300 ph:before:mr-2.5 ph:before:h-1 ph:before:w-1 dark:before:bg-white"
+        class="relative before:absolute before:right-full before:top-1/2 before:mr-3 before:h-2 before:w-2 before:-translate-y-1/2 before:rounded-full before:bg-heading before:transition before:duration-300 dark:before:bg-white ph:before:mr-2.5 ph:before:h-1 ph:before:w-1"
       >
         {{ title }}
       </h2>

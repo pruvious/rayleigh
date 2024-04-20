@@ -1,5 +1,6 @@
 <template>
   <a
+    v-if="$config.showBanner"
     href="https://pruvious.com"
     target="_blank"
     class="fixed bottom-6 left-1/2 z-10 flex max-w-64 -translate-x-1/2 items-center gap-4 rounded-full border border-transparent bg-white/75 p-4 text-sm shadow-2xl backdrop-blur transition-[background] dark:border-white/15 dark:bg-heading/80 dark:shadow-none ph:hidden"
