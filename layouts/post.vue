@@ -25,7 +25,7 @@ defineLayout({
   allowedBlocks: ['Image', 'Prose'],
 })
 
-const page = usePage()
+const page = unref(usePage())
 const { blogLandingPage } = await getCollectionData('settings')
 </script>
 
