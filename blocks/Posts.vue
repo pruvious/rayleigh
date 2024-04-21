@@ -7,7 +7,7 @@
           <h2>
             <NuxtLink :to="path">{{ headline }}</NuxtLink>
           </h2>
-          <WrittenOn :author="author" :publishDate="publishDate" class="mt-2 text-vs" />
+          <WrittenOn :author="author" :publishDate="publishDate" class="text-vs mt-2" />
           <div v-if="description" class="prose mt-4">
             <p>{{ description }}</p>
           </div>
@@ -45,7 +45,7 @@ const { data } = await useFetch<
   >
 >('/api/posts', { query: { page } })
 
-if (!data.value?.records.length) {
+if (!data.value?.records.length && (page.value !== 1 || data.value?.total)) {
   if (process.server) {
     throw createError({ statusCode: 404 })
   } else {
