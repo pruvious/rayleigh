@@ -11,7 +11,7 @@
 
       <button
         :title="mobileMenuVisible ? 'Close menu' : 'Open menu'"
-        @click="toggleMobileMenu()"
+        @click="mobileMenuVisible = !mobileMenuVisible"
         class="z-20 hidden h-8 w-8 tp:block"
         :class="{ 'sticky top-0': mobileMenuVisible, 'relative': !mobileMenuVisible }"
       >
@@ -36,9 +36,8 @@ import { useScrollLock } from '@vueuse/core'
 const mobileMenuVisible = useMobileMenuVisible()
 const isLocked = useScrollLock(document?.body)
 
-function toggleMobileMenu() {
-  mobileMenuVisible.value = !mobileMenuVisible.value
+watch(mobileMenuVisible, (value) => {
   window.scrollTo({ top: 0, behavior: 'smooth' })
-  isLocked.value = mobileMenuVisible.value
-}
+  isLocked.value = value
+})
 </script>
