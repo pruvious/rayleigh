@@ -22,7 +22,7 @@
     "@vueuse/core": "^10.9.0",
     "focus-trap": "^7.5.4",
     "nuxt": "^3.11.2",
-    "pruvious": "^3.11.4",
+    "pruvious": "^3.11.7",
     "swiper": "^11.1.1",
     "vue": "^3.4.23",
     "vue-router": "^4.3.2"
