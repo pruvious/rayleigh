@@ -14,5 +14,6 @@ export default defineCollection(
       },
     },
     additionalPublicPagesFields: ['footerBorder'],
+    allowedLayouts: ['default'],
   }),
 )

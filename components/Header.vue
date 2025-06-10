@@ -1,7 +1,7 @@
 <template>
   <Container>
     <header class="flex items-center gap-15 ph:gap-8">
-      <NuxtLink to="/" class="text-heading transition duration-300 dark:text-white">
+      <NuxtLink title="Go to homepage" to="/" class="text-heading transition duration-300 dark:text-white">
         <Logo />
       </NuxtLink>
 

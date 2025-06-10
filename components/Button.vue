@@ -1,7 +1,8 @@
 <template>
-  <NuxtLink
-    v-if="to"
+  <component
+    :is="to ? NuxtLink : 'button'"
     :to="to"
+    :type="to ? null : type"
     class="group relative inline-flex h-4 items-center pl-6 font-heading text-sm text-heading transition dark:text-white"
   >
     <span
@@ -10,11 +11,17 @@
     <span class="mt-px">
       <slot />
     </span>
-  </NuxtLink>
+  </component>
 </template>
 
 <script lang="ts" setup>
+import { NuxtLink } from '#components'
+
 defineProps({
   to: String,
+  type: {
+    type: String as PropType<'button' | 'submit'>,
+    default: 'button',
+  },
 })
 </script>
