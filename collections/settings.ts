@@ -1,4 +1,4 @@
-import { defineCollection } from '#pruvious'
+import { defineCollection, isObject, type QueryBuilderInstance } from '#pruvious'
 
 // @see https://pruvious.com/docs/collections
 export default defineCollection({
@@ -69,6 +69,40 @@ export default defineCollection({
         description: 'The page where all blog posts are listed',
       },
     },
+    recaptcha: {
+      type: 'switch',
+      options: {
+        label: 'Enable reCAPTCHA on forms',
+      },
+    },
+    recaptchaSiteKey: {
+      type: 'text',
+      options: {
+        required: true,
+        description: 'The site key provided by Google reCAPTCHA',
+      },
+      additional: {
+        conditionalLogic: { recaptcha: true },
+      },
+    },
+    recaptchaSecretKey: {
+      type: 'text',
+      options: {
+        required: true,
+        description: 'The secret key provided by Google reCAPTCHA (only visible to admins)',
+      },
+      additional: {
+        conditionalLogic: { recaptcha: true },
+        guards: [
+          ({ input }) => {
+            // Prevent non-admins from updating the secret key
+            if (isObject(input) && input.recaptchaSecretKey) {
+              delete input.recaptchaSecretKey
+            }
+          },
+        ],
+      },
+    },
   },
   dashboard: {
     // Group fields in tabs
@@ -77,7 +111,15 @@ export default defineCollection({
         Header: ['menu'],
         Footer: ['copyrightText', 'socialMedia'],
         Blog: ['blogLandingPage'],
+        Forms: ['recaptcha', ['recaptchaSiteKey', 'recaptchaSecretKey']],
       },
     ],
   },
+  guards: [
+    ({ currentQuery }) => {
+      // Prevent the secret key from being read by non-admins
+      const settingsQuery = currentQuery as QueryBuilderInstance<'settings'>
+      settingsQuery.deselect(['recaptchaSecretKey'])
+    },
+  ],
 })
